@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { PageErrorModule } from './page-error/page-error.module';
 
 import { AppComponent } from './app.component';
+import { ItemsModule } from './items/items.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AppComponent } from './app.component';
     SharedModule,
     HomeModule,
     PageErrorModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ItemsModule
   ],
   declarations: [
     AppComponent

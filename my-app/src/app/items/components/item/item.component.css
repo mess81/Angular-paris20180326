@@ -1,0 +1,9 @@
+.state-alivrer {
+  color: rgb(252, 7, 7);
+}
+.state-encours {
+  color: rgba(7, 23, 250);
+}
+.state-livrer {
+  color: rgb(0, 255, 0);
+}
