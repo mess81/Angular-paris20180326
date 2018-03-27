@@ -8,7 +8,6 @@ import { SharedModule } from './shared/shared.module';
 import { PageErrorModule } from './page-error/page-error.module';
 
 import { AppComponent } from './app.component';
-import { ItemsModule } from './items/items.module';
 import { AppRoutingModule } from './app-routing.module';
 import { Router } from '@angular/router';
 import { environment } from '../environments/environment';
@@ -21,7 +20,6 @@ import { environment } from '../environments/environment';
     SharedModule,
     HomeModule,
     NgbModule.forRoot(),
-    ItemsModule,
     AppRoutingModule,
     PageErrorModule
   ],

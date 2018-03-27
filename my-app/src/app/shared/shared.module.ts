@@ -4,20 +4,25 @@ import { NavComponent } from './components/nav/nav.component';
 import { StateDirective } from './directives/state/state.directive';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormComponent } from './components/form/form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   declarations: [
     NavComponent,
-    StateDirective
+    StateDirective,
+    FormComponent
   ],
   exports: [
     NavComponent,
-    StateDirective
+    StateDirective,
+    FormComponent
   ]
 })
 export class SharedModule { }
