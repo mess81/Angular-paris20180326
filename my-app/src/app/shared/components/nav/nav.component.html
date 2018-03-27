@@ -1,20 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">{{ title }}</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" routerLink="/home" (click)="isCollapsed = true">{{ title }}</a>
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+  [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="collapseExample" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Accueil</a>
+        <a class="nav-link" routerLink="/home" (click)="isCollapsed = true">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Liste</a>
+        <a class="nav-link" routerLink="/list" (click)="isCollapsed = true">Liste</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ajouter</a>
+        <a class="nav-link" routerLink="/home" (click)="isCollapsed = true">Ajouter</a>
       </li>
     </ul>
 

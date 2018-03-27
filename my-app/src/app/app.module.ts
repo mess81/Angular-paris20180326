@@ -9,6 +9,9 @@ import { PageErrorModule } from './page-error/page-error.module';
 
 import { AppComponent } from './app.component';
 import { ItemsModule } from './items/items.module';
+import { AppRoutingModule } from './app-routing.module';
+import { Router } from '@angular/router';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -17,9 +20,10 @@ import { ItemsModule } from './items/items.module';
     CoreModule,
     SharedModule,
     HomeModule,
-    PageErrorModule,
     NgbModule.forRoot(),
-    ItemsModule
+    ItemsModule,
+    AppRoutingModule,
+    PageErrorModule
   ],
   declarations: [
     AppComponent
@@ -27,4 +31,10 @@ import { ItemsModule } from './items/items.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(router: Router) {
+    if (!environment.production) {
+      console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+    }
+  }
+ }
