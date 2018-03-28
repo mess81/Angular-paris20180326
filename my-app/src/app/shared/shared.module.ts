@@ -5,14 +5,14 @@ import { StateDirective } from './directives/state/state.directive';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormComponent } from './components/form/form.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     NgbModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   declarations: [
     NavComponent,

@@ -1,13 +1,13 @@
-import { Directive, Input, OnInit, HostBinding } from '@angular/core';
+import { Directive, Input, OnInit, HostBinding, OnChanges } from '@angular/core';
 
 @Directive({
   selector: '[appState]'
 })
-export class StateDirective implements OnInit {
+export class StateDirective implements OnChanges {
   @Input() appState: string;
   @HostBinding('class') nameClass;
   constructor() { }
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.nameClass = this.formatClass(this.appState);
   }
   private removeAccents(state: string): string {

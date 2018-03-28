@@ -10,8 +10,11 @@ import { PageErrorModule } from './page-error/page-error.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Router } from '@angular/router';
-import { environment } from '../environments/environment';
-
+import { environment } from '../environments/environment.prod';
+import { CollectionService } from './core/services/collection/collection.service';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { EditRevolveService } from './core/services/editResolver/edit-revolve.service';
 
 @NgModule({
   imports: [
@@ -21,12 +24,15 @@ import { environment } from '../environments/environment';
     HomeModule,
     NgbModule.forRoot(),
     AppRoutingModule,
-    PageErrorModule
+    PageErrorModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   declarations: [
     AppComponent
   ],
-  providers: [],
+  providers: [CollectionService,
+              EditRevolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

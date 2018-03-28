@@ -1,17 +1,14 @@
-<form class="form container" #form="ngForm" (ngSubmit)="process()">
+<form class="form container" (ngSubmit)="process()" [formGroup]="form">
     <div class="form-group">
-     <input type="text" class="form-control" placeholder="Prenom et nom" name="name"
-     [(ngModel)]="newItem.name" required minlength="5" #nom="ngModel">
-     <div class="alert alert-danger" *ngIf="nom.invalid">champ invalid</div>
-     {{ newItem.name }}
+     <input type="text" class="form-control" placeholder="Prenom et nom" formControlName="name" >
+     <div class="alert alert-danger" *ngIf="formValid('name')">champ invalid</div>
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Ref. ex:1245" name="reference"
-         [(ngModel)]="newItem.reference" required minlength="4" #ref="ngModel">
-         <div class="alert alert-danger" *ngIf="ref.invalid">champ invalid</div>
+        <input type="text" class="form-control" placeholder="Ref. ex:1245" formControlName="reference">
+         <div class="alert alert-danger" *ngIf="formValid('reference')">champ invalid</div>
        </div>
     <div class="form-group">
-        <select class="form-control" name="state" [(ngModel)]="newItem.state">
+        <select class="form-control" formControlName="state">
             <option *ngFor="let libelle of libelles" [ngValue]="libelle">{{ libelle }}</option>
           </select>
     </div>
